@@ -1,7 +1,7 @@
-public class IncorrectAgeException extends RuntimeException{
+public class IncorrectAgeException extends Exception{
 
-    public IncorrectAgeException(String message) {
-        super(message);
+    public IncorrectAgeException() {
+        super("Age cannot be less then 1");
     }
 
 }

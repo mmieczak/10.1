@@ -4,7 +4,7 @@ public class Person {
     private int age;
     private long pesel;
 
-    public Person(String firstName, String lastName, int age, long pesel) {
+    public Person(String firstName, String lastName, int age, long pesel) throws NameUndefinedException, IncorrectAgeException {
         if (firstName == null || lastName == null)
             throw new NameUndefinedException("First & second name cannot be null");
         else if (firstName.length() < 3 || lastName.length() < 3)
@@ -14,7 +14,7 @@ public class Person {
             this.lastName = lastName;
         }
 
-        if (age < 1) throw new IncorrectAgeException("Age cannot be less then 1");
+        if (age < 1) throw new IncorrectAgeException();
         else
             this.age = age;
         this.pesel = pesel;
